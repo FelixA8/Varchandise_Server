@@ -1,10 +1,5 @@
 const mysql = require('mysql2');
-const connection = mysql.createConnection({
-    host: 'localhost',
-    user: 'root',
-    password: '',
-    database: 'varchandise_mcc',
-});
+const connection = mysql.createPool(process.env.MYSQL_URL); 
 
 connection.connect();
 module.exports = connection;
