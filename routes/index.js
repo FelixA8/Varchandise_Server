@@ -1,9 +1,13 @@
 var express = require('express');
+require('dotenv').config();
 var router = express.Router();
+const app = express();
+const mysql = require('mysql2');
 
-/* GET home page. */
-router.get('/', function(req, res, next) {
-  res.render('index', { title: 'Express' });
-});
+const PORT = process.env.APPLICATION_PORT;``
+
+app.listen(PORT, () => {
+  console.log("Server is running at " + PORT);
+})
 
 module.exports = router;
